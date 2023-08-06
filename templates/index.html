@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ title }}</title>
+  <meta content="{{ description }}" name="description">
+  <meta content="{{ keywords }}" name="keywords">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+  <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+</head>
+<body>
+
+
+  <div class="blackout" id="blackout">
+    <div class="popup">
+      <div class="callout-header">Контактная информация</div>
+        <div class="slideshow">
+          <img src="image1.jpg" alt="Изображение 1">
+          <img src="image2.jpg" alt="Изображение 2">
+          <img src="image3.jpg" alt="Изображение 3">
+        </div>
+      <span class="closebtn" onclick="closePopup()">&times;</span>
+      <div class="callout-container">
+        <h2>Мы находимся:</h2> 
+        <h4>Крым, пгт. Нижнегорский, с. Семенное, ул. Зелёная, д.1-Б</h4>
+        <div class="info">
+          <h2>Контакты для связи с нами</h2>
+          <p>Вы можете воспользоваться следующими способами для связи:</p>
+          <p><a href="https://vk.com/hvoya_nizhnegorskiy" target="_blank">Официальная группа ВК</a></p>
+          <p><a href="https://t.me/TraceNull" target="_blank">Менеджер Telegram</a></p>
+          <p>Номера телефонов:</p>
+          <ul>
+            <li>Жанна: +7 (978) 8919038</li>
+            <li>Владимир: +7 (978) 8919039</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="wrapper">
+    <div class="header" id="header">
+      <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo" class="logo" id="logo">
+      <a href="https://vk.com/hvoya_nizhnegorskiy" target="_blank">
+        <img src="{{ url_for('static', filename='img/vk_link.png') }}" alt="VK_group" class="vk_link">
+      </a>
+      <div class="site_name" id="site_name">{{ site_name }}</div>
+      <div class="site_description" id="site_description">{{ site_description }}</div>
+    </div>
+    <div class="content">
+      {{ card_blocks | safe }}
+    </div>
+  </div>
+  <footer class="footer">
+    <div class="footer-container">
+      <p>Информация о сайте и его владельцах</p>
+      <p>Контактные данные</p>
+    </div>
+  </footer>
+  
+  <!-- подгружаем js-скрипт -->
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,344 @@
+@font-face {
+  font-family: 'TitleFont';
+  src: url('../fonts/TitleFont.ttf') format('opentype');
+
+}
+
+@font-face {
+  font-family: 'MainFont';
+  src: url('../fonts/MainFont.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'InfoFont';
+  src: url('../fonts/InfoFont.ttf') format('opentype');
+}
+
+/* задаём шрифт для заголовка */
+.site_name {
+  /* анимация свечения неоном */
+  -webkit-animation: glow 3s ease-in-out infinite alternate;
+  -moz-animation: glow 3s ease-in-out infinite alternate;
+  animation: glow 3s ease-in-out infinite alternate;
+  font-family: 'TitleFont', sans-serif;
+  font-size: 5vh;
+/*  font-size: 44px;*/
+/*  letter-spacing: 3px; /* Здесь задайте желаемое расстояние между буквами */*/
+/*  padding-bottom: 30px;*/
+}
+
+
+/* текст под названием сайта */
+.site_description {
+  font-family: 'InfoFont', sans-serif;
+  font-size: 3vh;
+/*  letter-spacing: 1px; /* Здесь задайте желаемое расстояние между буквами */*/
+  flex-direction: column;
+  padding-top: 2vh;
+  margin: 0;
+}
+
+/* Стили для верхней части страницы */
+.header {
+  height: 13vh;
+  background-color: rgba(242, 242, 242, 0.8);
+  padding: 0px;
+  text-align: center;
+  margin: 0;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+  height: 11vh;
+}
+
+.vk_link{
+  position: absolute;
+  top: 1vh;
+  right: 1vw;
+  height: 11vh;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.vk_link:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
+/* Стили для карточек товаров */
+.card {
+  font-family: 'MainFont', sans-serif;
+  font-size: 12px;
+  letter-spacing: 2px;
+  background-color: rgba(228, 255, 225, 0.8);
+  width: calc(23% - 20px);
+  margin: 10px;
+  display: inline-block;
+  transition: transform 0.3s;
+  vertical-align: top;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 8px;
+  flex: 0 0 auto;
+  margin-right: 20px;
+  scroll-snap-align: start;
+}
+
+.card-image{
+  
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+/* Стили для изображений товаров */
+.card img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+/* Стили для цены товара */
+.card .price {
+  font-weight: bold;
+  color: #333;
+}
+
+
+.content {
+  flex: 1;
+}
+
+/* Стиль для подвала */
+.footer {
+  width: 100%;
+  font-family: 'Calibri', sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  flex-shrink: 0;
+  background-color: rgba(228, 255, 225, 0.8);
+  text-align: center;
+  margin: 50px 0 0; /* Добавляем отступ сверху */
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* стиль для всего документа */
+html {
+  scroll-behavior: smooth;
+  margin: 0; /* Add this line to remove the margin */
+}
+
+body {
+  background-image: url("../img/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Добавляем это свойство для фиксированной позиции фона */
+  margin: 0;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  z-index: 0;
+  padding-bottom: 10px;
+}
+
+/* для затемнения картинки при фокусе, и отображения текста */
+.card-description {
+  max-height: 63%; /* Задайте желаемую максимальную высоту */
+  overflow: hidden;
+  position: absolute;
+  top: 33%;
+  left: 10%;
+  transform: translate(-5%, -50%);
+  color: white;
+  display: none;
+  border: none;
+}
+
+.card-container {
+  display: flex;
+  overflow-x: auto;
+  transition: scroll 0.5s ease-in-out;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.card-container:hover {
+  scroll-snap-type: x mandatory;
+}
+
+.logo:hover {
+  /* Запустите анимацию встряхивания и сделайте так, чтобы анимация длилась 0,5 секунды */
+  animation: shake 0.5s;
+
+  /* Когда анимация будет закончена, начните снова */
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+
+
+.section-title {
+  padding-top: 10px;
+  position: relative;
+  z-index: 1;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+
+.button-container {
+  position: relative;
+}
+
+.scroll-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 1;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.left-scroll {
+  left: 0;
+}
+
+.right-scroll {
+  right: 0;
+}
+
+.blackout {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.popup {
+  position: fixed;
+  z-index: 3;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  border: 5px dotted #A0A0A0; /* Пунктирная граница */
+  border-radius: 10px;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.closebtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 30px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgb(225, 0, 0);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* при наведении на кнопку закрытия окошка */
+.closebtn:hover {
+  background-color: rgb(255, 0, 0);
+} 
+
+/* Заголовок выноски */
+.callout-header {
+    /* анимация свечения неоном */
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+
+  font-family: 'TitleFont', sans-serif;
+  text-align: center;
+  padding: 25px 15px;
+  font-size: 30px;
+  color: black;
+}
+
+/* создаём игающий светящийся неоновый текст */
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff;
+  }
+
+}
+
+h2 {
+  text-align: center;
+  font-family: 'MainFont', sans-serif;
+/*  padding: 15px;*/
+  color: black
+}
+
+h4 {
+  text-align: center;
+  font-family: 'MainFont', sans-serif;
+/*  padding: 10px;*/
+  color: black
+}
+
+/* Контейнер/тело выноски */
+.callout-container {
+  font-family: 'MainFont', sans-serif;
+/*  padding: 15px;*/
+  color: black
+}

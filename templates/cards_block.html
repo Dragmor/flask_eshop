@@ -1,0 +1,23 @@
+<!-- шаблон для блока с карточками товара -->
+<div class="container">
+  <h2 class="section-title">{{ section_title }}</h2>
+  <section class="button-container">
+    <button class="scroll-btn left-scroll">←</button>
+    <button class="scroll-btn right-scroll">→</button>
+  <section class="card-container" id="{{ container_id }}">
+    {% for card in cards %}
+    <div class="card">
+      <div class="card-image">
+        <img src="{{ card['image_link'] }}" alt="{{ card['title'] }}">
+
+        <div class="card-description">
+          <p>{{ card['description'] }}</p>
+        </div>
+      </div>
+      <h2>{{ card['title'] }}</h2>
+      <p class="price">{{ card['price'] }}</p>
+    </div>
+    {% endfor %}
+  </section>
+  </section>
+</div>
