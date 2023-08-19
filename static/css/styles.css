@@ -32,7 +32,6 @@
 .site_description {
   font-family: 'InfoFont', sans-serif;
   font-size: 3vh;
-/*  letter-spacing: 1px; /* Здесь задайте желаемое расстояние между буквами */*/
   flex-direction: column;
   padding-top: 2vh;
   margin: 0;
@@ -42,7 +41,7 @@
 .header {
   height: 13vh;
   background-color: rgba(242, 242, 242, 0.8);
-  padding: 0px;
+  padding: 0vh;
   text-align: center;
   margin: 0;
   position: relative;
@@ -71,19 +70,21 @@
 /* Стили для карточек товаров */
 .card {
   font-family: 'MainFont', sans-serif;
-  font-size: 12px;
-  letter-spacing: 2px;
+  font-size: 1.5vh;
+  letter-spacing: 0.15vw;
   background-color: rgba(228, 255, 225, 0.8);
-  width: calc(23% - 20px);
-  margin: 10px;
+  width: calc(23% - 1vw);
+  margin-top: 1vw;
+  margin-bottom: 1vw;
   display: inline-block;
   transition: transform 0.3s;
   vertical-align: top;
-  border: 1px solid #ccc;
-  border-radius: 15px;
-  padding: 8px;
+/*  border: 1vh solid #ccc;*/
+  border-radius: 2vh;
+  padding: 1vh;
   flex: 0 0 auto;
-  margin-right: 20px;
+  margin-right: 3vw;
+/*  margin-left: 3vw;*/
   scroll-snap-align: start;
 }
 
@@ -97,10 +98,10 @@
 
 /* Стили для изображений товаров */
 .card img {
-  border-radius: 10px;
+  border-radius: 1vw;
   width: 100%;
   height: auto;
-  margin-bottom: 10px;
+  margin-bottom: 0.1vh;
 }
 
 /* Стили для цены товара */
@@ -118,16 +119,15 @@
 .footer {
   width: 100%;
   font-family: 'Calibri', sans-serif;
-  font-size: 14px;
-  letter-spacing: 1px;
+  font-size: 1.25vw;
+  letter-spacing: 0.1vw;
   flex-shrink: 0;
   background-color: rgba(228, 255, 225, 0.8);
   text-align: center;
-  margin: 50px 0 0; /* Добавляем отступ сверху */
+  margin: 5vh 0 0; /* Добавляем отступ сверху */
   display: flex;
   flex-direction: column;
 }
-
 
 
 /* стиль для всего документа */
@@ -148,7 +148,7 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   text-align: center;
   z-index: 0;
-  padding-bottom: 10px;
+  padding-bottom: 1vh;
 }
 
 /* для затемнения картинки при фокусе, и отображения текста */
@@ -193,28 +193,28 @@ body {
 }
 
 @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+  0% { transform: translate(0.1vw, 0.1vh) rotate(0deg); }
+  10% { transform: translate(-0.1vw, -0.2vh) rotate(-1deg); }
+  20% { transform: translate(-0.3vw, 0vh) rotate(1deg); }
+  30% { transform: translate(0.3vw, 0.2vh) rotate(0deg); }
+  40% { transform: translate(0.1vw, -0.1vh) rotate(1deg); }
+  50% { transform: translate(-0.1vw, 0.2vh) rotate(-1deg); }
+  60% { transform: translate(-0.3vw, 0.1vh) rotate(0deg); }
+  70% { transform: translate(0.3vw, 0.1vh) rotate(-1deg); }
+  80% { transform: translate(-0.1vw, -0.1vh) rotate(1deg); }
+  90% { transform: translate(0.1vw, 0.2vh) rotate(0deg); }
+  100% { transform: translate(0.1vw, -0.2vh) rotate(-1deg); }
 }
 
 
 
 .section-title {
-  padding-top: 10px;
+  padding-top: 2vh;
   position: relative;
   z-index: 1;
-  margin-top: 50px;
+  margin-top: 5vh;
   text-align: center;
-  font-size: 24px;
+  font-size: 1.5vw;
   font-weight: bold;
   color: #ffffff;
 }
@@ -228,17 +228,17 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  width: 4vw;
+  height: 4vw;
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   color: #fff;
-  font-size: 20px;
+  font-size: 1vw;
   cursor: pointer;
   border-radius: 50%;
   z-index: 1;
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 1.4vw;
+  margin-right: 1.4vw;
 }
 
 .scroll-btn:hover {
@@ -265,27 +265,29 @@ body {
 }
 
 .popup {
+  width: 40vw;
+  height: 55vh;
   position: fixed;
   z-index: 3;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   background-color: #ffffff;
-  border: 5px dotted #A0A0A0; /* Пунктирная граница */
-  border-radius: 10px;
-  padding: 20px;
+  border: 0.5vw dotted #A0A0A0; /* Пунктирная граница */
+  border-radius: 1vw;
+  padding: 2vh;
   background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.2vw 0.4vh rgba(0, 0, 0, 0.2);
 }
 
 .closebtn {
   position: absolute;
-  top: 5px;
-  right: 5px;
-  font-size: 30px;
+  top: 1vh;
+  right: 1vw;
+  font-size: 3vw;
   cursor: pointer;
-  width: 30px;
-  height: 30px;
+  width: 2.5vw;
+  height: 2.5vw;
   border-radius: 50%;
   background-color: rgb(225, 0, 0);
   color: white;
@@ -309,15 +311,15 @@ body {
 
   font-family: 'TitleFont', sans-serif;
   text-align: center;
-  padding: 25px 15px;
-  font-size: 30px;
+  padding: 2vw 1.5vh;
+  font-size: 1.5vw;
   color: black;
 }
 
 /* создаём игающий светящийся неоновый текст */
 @-webkit-keyframes glow {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 50px #fff;
+    text-shadow: 0 0 1vw #fff, 0 0 2vw #fff, 0 0 3vw #fff, 0 0 4vw #fff, 0 0 5vw #fff;
   }
 
 }
@@ -326,14 +328,28 @@ h2 {
   text-align: center;
   font-family: 'MainFont', sans-serif;
 /*  padding: 15px;*/
+  font-size: 1.5vw;
   color: black
 }
 
 h4 {
   text-align: center;
   font-family: 'MainFont', sans-serif;
-/*  padding: 10px;*/
+  font-size: 1vw;
   color: black
+}
+
+.info {
+  font-size: 1vw;
+}
+
+li {
+  text-align: left;
+  font-size: 1vw;
+}
+
+.numbers {
+  margin-left: 3vw;
 }
 
 /* Контейнер/тело выноски */
@@ -341,4 +357,49 @@ h4 {
   font-family: 'MainFont', sans-serif;
 /*  padding: 15px;*/
   color: black
+}
+
+
+.flip-box {
+  background-color: transparent;
+  width: 5vw;
+  height: 5vw;
+  perspective: 1000px;
+}
+
+.flip-box-inner {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-box:hover .flip-box-inner {
+  transform: rotateX(180deg);
+}
+
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  right: -17vw;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+.flip-box-front {
+  color: black;
+}
+
+.flip-box-back {
+  color: white;
+  transform: rotateX(180deg);
+}
+
+.flip-box img {
+
+  width: 5vw;
+  height: 5vw;
 }

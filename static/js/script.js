@@ -42,3 +42,19 @@ function openPopup() {
 function closePopup() {
   document.getElementById('blackout').style.display = 'none';
 }
+
+
+
+  // Получаем элемент flip-box-inner
+  var flipBoxInner = document.querySelector('.flip-box-inner');
+
+  // Функция для переворачивания flip-box-inner
+  function flip() {
+    flipBoxInner.style.transform = 'rotateX(180deg)';
+    setTimeout(function() {
+      flipBoxInner.style.transform = 'rotateX(0deg)';
+    }, 2000);
+  }
+
+  // Вызываем функцию flip каждую секунду
+  setInterval(flip, 4000); // 2000 миллисекунд = 2 секунды
