@@ -1,8 +1,8 @@
 import sys
 import multiprocessing
 #
-from modules.engine import app
-from modules.engine import parser_process
+from engine import app
+from engine import parser_process
 
 
 

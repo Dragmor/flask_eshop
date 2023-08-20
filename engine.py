@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from jinja2 import Template, Environment, FileSystemLoader
+from jinja2 import Environment, FileSystemLoader
 import datetime
 import asyncio
 import time
@@ -97,4 +97,4 @@ def index():
     return render_template('index.html', card_blocks=card_blocks, **variables)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', port="80")
