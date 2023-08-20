@@ -21,25 +21,22 @@
   -moz-animation: glow 3s ease-in-out infinite alternate;
   animation: glow 3s ease-in-out infinite alternate;
   font-family: 'TitleFont', sans-serif;
-  font-size: 5vh;
-/*  font-size: 44px;*/
-/*  letter-spacing: 3px; /* Здесь задайте желаемое расстояние между буквами */*/
-/*  padding-bottom: 30px;*/
+  font-size: 5vw;
 }
 
 
 /* текст под названием сайта */
 .site_description {
   font-family: 'InfoFont', sans-serif;
-  font-size: 3vh;
+  font-size: 2vw;
   flex-direction: column;
-  padding-top: 2vh;
+  padding-top: 1vw;
   margin: 0;
 }
 
 /* Стили для верхней части страницы */
 .header {
-  height: 13vh;
+  height: 10vw;
   background-color: rgba(242, 242, 242, 0.8);
   padding: 0vh;
   text-align: center;
@@ -51,14 +48,14 @@
   position: absolute;
   top: 1vh;
   left: 1vw;
-  height: 11vh;
+  height: 8vw;
 }
 
 .vk_link{
   position: absolute;
-  top: 1vh;
+  top: 1vw;
   right: 1vw;
-  height: 11vh;
+  height: 8vw;
   transition: transform 0.3s, opacity 0.3s;
 }
 
