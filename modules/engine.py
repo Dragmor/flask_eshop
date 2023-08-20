@@ -96,10 +96,5 @@ def index():
 
     return render_template('index.html', card_blocks=card_blocks, **variables)
 
-# if __name__ == '__main__':
-#     token = os.getenv('VK_TOKEN')
-#     parser = multiprocessing.Process(target=parser_process, args=(token,))
-#     parser.start()
-
-#     http_server = WSGIServer(('0.0.0.0', 8080), app)
-#     http_server.serve_forever()
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
