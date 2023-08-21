@@ -263,7 +263,7 @@ body {
 
 .popup {
   width: 40vw;
-  height: 55vh;
+  height: 36vw;
   position: fixed;
   z-index: 3;
   left: 50%;

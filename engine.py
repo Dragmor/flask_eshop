@@ -2,44 +2,11 @@ from flask import Flask, render_template
 from jinja2 import Environment, FileSystemLoader
 import datetime
 import asyncio
-import time
 #
 import modules.db_manager as db_manager
-import modules.vk_parse as vk_parse
 
 app = Flask(__name__)
 app.debug = True
-
-def parser_process(token=None):
-    # процесс, который парсит из группы ВК товары, и загружает их в БД
-    if token:
-        print("Ok! Running with token")
-    else:
-        print("Run without token!")
-        return
-    while True:
-        try:
-            # парсим из группы вк товары
-            group_id = -220392532  # Замените на ID вашей группы
-            access_token = token  # Замените на ваш токен группы
-            try:
-                cards = vk_parse.get_group_items(group_id, access_token)
-            except Exception as error:
-                print(f"Parsing product error: {error}")
-                time.sleep(300)
-                continue
-            if not cards:
-                print("Can't find products in VK group!")
-                time.sleep(300)
-                continue
-            # записываем в БД все товары, которые спарсили
-            asyncio.run(db_manager.write_items_to_database(cards))  
-        except Exception as error:
-            print(f"Loading products error: {error}")
-            time.sleep(300)
-        else:
-            print("Ok! Products loading complete!")
-            time.sleep(3600) # ждём час
 
 @app.route('/')
 def index():
